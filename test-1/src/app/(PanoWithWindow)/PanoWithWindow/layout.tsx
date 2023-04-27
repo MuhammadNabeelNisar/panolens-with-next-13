@@ -13,9 +13,8 @@ export default function RootLayout({
       <body>
         {children}
 
-        <script src="js/three.min.js"></script>
-        <script src="js/panolens.min.js"></script>
-        <script>window.PANOLENS = PANOLENS</script>
+        <script src="/js/three.min.js" async></script>
+        <script src="/js/panolens.min.js" async></script>
       </body>
     </html>
   );
