@@ -28,7 +28,31 @@ const Pano = ({}: PanoProps) => {
     if (typeof window !== "undefined") initializePANOLENS();
   }, [Canvas]);
 
-  return <div ref={Canvas} className="w-full h-[500px] overflow-hidden"></div>;
+  const handleDME = () => {
+    if (typeof (DeviceMotionEvent as any).requestPermission === "function") {
+      (DeviceMotionEvent as any)
+        .requestPermission()
+        .then((permissionState: any) => {
+          if (permissionState === "granted") {
+            // User has granted permission
+            console.log(permissionState);
+          }
+        })
+        .catch(console.error);
+    }
+  };
+
+  return (
+    <>
+      <div ref={Canvas} className="w-full h-[500px] overflow-hidden"></div>
+      <button
+        onClick={handleDME}
+        className="p-3 bg-cyan-600 text-white w-full mt-5"
+      >
+        Handle DME
+      </button>
+    </>
+  );
 };
 
 export default Pano;
