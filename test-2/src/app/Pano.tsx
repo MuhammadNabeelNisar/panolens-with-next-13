@@ -17,7 +17,6 @@ const Pano = ({}: PanoProps) => {
       autoRotateActivationDuration: 5000,
       dwellTime: 1000,
       autoHideInfospot: false,
-      controlBar: false,
     });
 
     const img = new PANOLENS.ImagePanorama("/lab.png");
@@ -28,7 +27,7 @@ const Pano = ({}: PanoProps) => {
     if (typeof window !== "undefined") initializePANOLENS();
   }, [Canvas]);
 
-  return <div ref={Canvas} className="w-full h-screen"></div>;
+  return <div ref={Canvas} className="w-full h-screen overflow-hidden"></div>;
 };
 
 export default Pano;
