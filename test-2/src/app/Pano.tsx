@@ -17,6 +17,7 @@ const Pano = ({}: PanoProps) => {
       autoRotateActivationDuration: 5000,
       dwellTime: 1000,
       autoHideInfospot: false,
+      controlBar: true,
     });
 
     const img = new PANOLENS.ImagePanorama("/lab.png");
