@@ -28,7 +28,7 @@ const Pano = ({}: PanoProps) => {
     if (typeof window !== "undefined") initializePANOLENS();
   }, [Canvas]);
 
-  return <div ref={Canvas} className="w-full h-screen overflow-hidden"></div>;
+  return <div ref={Canvas} className="w-full h-[500px] overflow-hidden"></div>;
 };
 
 export default Pano;
